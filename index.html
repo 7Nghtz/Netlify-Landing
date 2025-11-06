@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NGHTZ — Música</title>
+  <meta name="description" content="Escucha NGHTZ en Spotify y YouTube. Sígueme en Instagram." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NGHTZ — Música" />
+  <meta property="og:description" content="Escucha NGHTZ en Spotify y YouTube. Sígueme en Instagram." />
+  <meta property="og:type" content="website" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)n=f._fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4244596079120479');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=4244596079120479&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --card: #141414;
+      --text: #ffffff;
+      --muted: #bdbdbd;
+      --btn: #1db954; /* Spotify green vibe */
+      --btn-hover: #1ed760;
+      --yt: #ff0000;
+      --ig: #ff5ea1;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 10% 10%, #1a1a1a 0%, var(--bg) 50%);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 480px;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 28px;
+      letter-spacing: 0.5px;
+    }
+    p.lead {
+      margin: 0 0 22px;
+      color: var(--muted);
+    }
+    .links { display: grid; gap: 12px; margin-top: 14px; }
+    .btn {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: #1a1a1a;
+      transition: transform .06s ease, background .2s ease, border-color .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.2); }
+    .btn .ico { font-size: 18px; text-align: center; }
+    .btn.spotify { background: linear-gradient(180deg, rgba(29,185,84,0.15), rgba(29,185,84,0.05)); border-color: rgba(29,185,84,0.35); }
+    .btn.spotify:hover { background: linear-gradient(180deg, rgba(29,185,84,0.22), rgba(29,185,84,0.08)); }
+    .btn.youtube { background: linear-gradient(180deg, rgba(255,0,0,0.14), rgba(255,0,0,0.05)); border-color: rgba(255,0,0,0.35); }
+    .btn.youtube:hover { background: linear-gradient(180deg, rgba(255,0,0,0.22), rgba(255,0,0,0.08)); }
+    .btn.instagram { background: linear-gradient(180deg, rgba(255,105,180,0.14), rgba(255,105,180,0.05)); border-color: rgba(255,105,180,0.35); }
+    .btn.instagram:hover { background: linear-gradient(180deg, rgba(255,105,180,0.22), rgba(255,105,180,0.08)); }
+
+    footer { margin-top: 18px; text-align: center; color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="card">
+      <h1>¡Escucha mi música!</h1>
+      <p class="lead">NGHTZ — Escucha y sígueme en tus plataformas favoritas.</p>
+
+      <div class="links">
+        <a class="btn spotify" href="https://open.spotify.com/intl-es/artist/2WB6CfvPNtbXxnq84RAdZP?si=SvnizyAjTBmGQIW-NEmBXA" target="_blank"
+           onclick="fbq('trackCustom', 'ClickSpotify')">
+          <span class="ico">🎧</span>
+          <span>Escuchar en Spotify</span>
+        </a>
+
+        <a class="btn youtube" href="https://www.youtube.com/@nghtz" target="_blank"
+           onclick="fbq('trackCustom', 'ClickYouTube')">
+          <span class="ico">▶️</span>
+          <span>Ver en YouTube</span>
+        </a>
+
+        <a class="btn instagram" href="https://www.instagram.com/7nghtz/" target="_blank"
+           onclick="fbq('trackCustom', 'ClickInstagram')">
+          <span class="ico">📸</span>
+          <span>Seguir en Instagram</span>
+        </a>
+      </div>
+
+      <footer>
+        © <span id="y"></span> NGHTZ
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    // año dinámico
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
