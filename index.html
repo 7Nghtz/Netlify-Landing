@@ -33,6 +33,22 @@
   <!-- End Meta Pixel Code -->
 
   <style>
+    .ico {
+  width: 22px;
+  height: 22px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* opcional, mantiene el logo blanco */
+  transition: transform 0.2s ease;
+    }
+
+@media (max-width: 600px) {
+  .ico {
+    width: 18px;
+    height: 18px;
+    }
+    }
+
     :root {
       --bg: #0d0d0d;
       --card: #141414;
