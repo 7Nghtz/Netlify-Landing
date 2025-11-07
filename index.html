@@ -154,5 +154,25 @@
     // año dinámico
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
+
+  <!-- script YouTube (deep link with fallback) -->
+  <script>
+    function openYouTubeApp(e) {
+      e.preventDefault();
+      const webUrl = "https://www.youtube.com/@nghtz";
+      const iosScheme = "youtube://www.youtube.com/@nghtz";
+      const androidScheme = "vnd.youtube://www.youtube.com/@nghtz";
+      const isAndroid = /android/i.test(navigator.userAgent);
+      const scheme = isAndroid ? androidScheme : iosScheme;
+      const start = Date.now();
+      window.location.href = scheme;
+      setTimeout(() => {
+        if (Date.now() - start < 1600) {
+          window.location.href = webUrl;
+        }
+      }, 800);
+    }
+  </script>
+
 </body>
 </html>
