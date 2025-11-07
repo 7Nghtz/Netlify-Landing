@@ -6,9 +6,18 @@
   <title>Nghtz</title>
   <meta name="description" content="Escucha NGHTZ en Spotify y YouTube. Sígueme en Instagram." />
 
-    <!-- Tipografia Nghtz -->
+  <!-- Evitar destellos en móvil y forzar esquema oscuro -->
+  <meta name="theme-color" content="#0d0d0d">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Tipografia Nghtz -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,900&display=swap" rel="stylesheet">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,900&display=swap" as="style">
+
+  <!-- Preload de la imagen de fondo para que aparezca antes -->
+  <link rel="preload" as="image" href="De0a100.webp" imagesrcset="De0a100.webp" imagesizes="100vw">
 
   <!-- Open Graph -->
   <meta property="og:title" content="NGHTZ" />
@@ -38,23 +47,19 @@
 
   <style>
     .ico {
-  width: 22px;
-  height: 22px;
-  max-width: 100%;
-  object-fit: contain;
-  filter: brightness(0) invert(1); /* opcional, mantiene el logo blanco */
-  transition: transform 0.2s ease;
+      width: 22px;
+      height: 22px;
+      max-width: 100%;
+      object-fit: contain;
+      filter: brightness(0) invert(1); /* opcional, mantiene el logo blanco */
+      transition: transform 0.2s ease;
     }
-
-@media (max-width: 600px) {
-  .ico {
-    width: 18px;
-    height: 18px;
-    }
+    @media (max-width: 600px) {
+      .ico { width: 18px; height: 18px; }
     }
 
     :root {
-      --bg: #0d0d0d;
+      --bg: #0d0d0d;        /* color base del fondo (pintado al instante) */
       --card: #141414;
       --text: #ffffff;
       --muted: #bdbdbd;
@@ -63,20 +68,30 @@
       --yt: #ff0000;
       --ig: #ff5ea1;
     }
+
     * { box-sizing: border-box; }
     html, body { height: 100%; margin: 0; }
+
+    /* ANTI-FLASH: pintamos color y luego la imagen; usamos cover + position */
     body {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      background: url("De0a100.webp") no-repeat center center fixed;
+      background-color: var(--bg);
+      background-image: url("De0a100.webp");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
       color: var(--text);
       display: grid;
       place-items: center;
       padding: 24px;
     }
-    .wrap {
-      width: 100%;
-      max-width: 480px;
+    /* iOS suele parpadear con fixed; en móvil lo desactivamos */
+    @media (max-width: 900px){
+      body{ background-attachment: scroll; }
     }
+
+    .wrap { width: 100%; max-width: 480px; }
     .card {
       background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
       backdrop-filter: blur(6px);
@@ -94,10 +109,7 @@
       font-size: 28px;
       letter-spacing: 0.5px;
     }
-    p.lead {
-      margin: 0 0 22px;
-      color: var(--muted);
-    }
+    p.lead { margin: 0 0 22px; color: var(--muted); }
     .links { display: grid; gap: 12px; margin-top: 14px; }
     .btn {
       display: grid;
@@ -181,6 +193,5 @@
       }, 800);
     }
   </script>
-
 </body>
 </html>
